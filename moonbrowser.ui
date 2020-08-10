@@ -281,6 +281,7 @@
               <object class="GtkEntry" id="entry_url">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="margin_right">2</property>
                 <property name="margin_top">2</property>
                 <property name="margin_bottom">3</property>
                 <property name="placeholder_text" translatable="yes">https://google.com/</property>
