@@ -7,8 +7,11 @@
     <property name="type_hint">dialog</property>
     <property name="program_name">MoonBrowser</property>
     <property name="version">1.0</property>
-    <property name="copyright" translatable="yes">© 2020 Sodomon</property>
-    <property name="comments" translatable="yes">Un Navegador Simple hecho en lua Gtk y WebKit2</property>
+    <property name="copyright" translatable="yes">Copyright (c) 2020 Díaz Urbaneja Víctor Diego Alejandro(Sodomon) 
+
+  </property>
+    <property name="comments" translatable="yes">a simple lua browser using lgi and webkit2
+© 2020 Sodomon</property>
     <property name="authors">Díaz Urbaneja Víctor Diego Alejandro(Sodomon) &lt;sodomon2@gmail.com&gt;</property>
     <property name="logo_icon_name">applications-internet</property>
     <property name="license_type">gpl-3-0</property>
