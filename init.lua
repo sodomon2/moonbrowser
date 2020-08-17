@@ -40,9 +40,16 @@ ui.entry_url:grab_focus()
 function ui.entry_url:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
       webview:load_uri('http://' .. ui.entry_url.text)
-      ui.url.label = webview:get_uri()
     end
 end
+
+GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1,
+	function ()
+		ui.url.label = webview:get_uri()
+    ui.entry_url.text = webview:get_uri()
+		return true
+	end
+)
 
 function ui.btn_forward:on_clicked()
     webview:go_forward()
