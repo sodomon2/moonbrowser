@@ -39,7 +39,6 @@ ui.entry_url:grab_focus()
 function ui.entry_url:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
       webview:load_uri('http://' .. ui.entry_url.text)
-      ui.url.label = webview:get_uri()
     end
 end
 
@@ -53,6 +52,11 @@ end
 
 function ui.btn_reload:on_clicked()
     webview:reload()
+end
+
+function ui.btn_home:on_clicked()
+    webview:load_uri('http://google.com')
+    ui.entry_url.text = 'google.com'
 end
 
 ui.main_window:show_all(ui.scroll:add(webview))
