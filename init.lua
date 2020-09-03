@@ -33,7 +33,6 @@ function ui.main_window:on_destroy()
     Gtk.main_quit()
 end
 
-webview:load_uri('')
 ui.entry_url:grab_focus()
 
 function ui.entry_url:on_key_release_event(env)
