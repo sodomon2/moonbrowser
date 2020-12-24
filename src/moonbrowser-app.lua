@@ -13,6 +13,12 @@ function moonbrowser_init()
 end
 moonbrowser_init()
 
+GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1,function()
+    ui.main_window.title = webview:get_title()
+    return true
+end)
+
+
 function ui.menu_about:on_button_press_event()
     ui.about_window:run()
     ui.about_window:hide()
@@ -29,7 +35,6 @@ end
 function ui.entry_url:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
       webview:load_uri('http://' .. ui.entry_url.text)
-      ui.main_window.title = webview:get_title()
     end
 end
 
