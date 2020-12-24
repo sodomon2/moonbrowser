@@ -287,7 +287,7 @@
                 <property name="margin_right">2</property>
                 <property name="margin_top">2</property>
                 <property name="margin_bottom">3</property>
-                <property name="primary_icon_stock">gtk-find</property>
+                <property name="secondary_icon_stock">gtk-find</property>
               </object>
               <packing>
                 <property name="expand">True</property>

@@ -6,7 +6,12 @@
  @date      23.12.2020 22:09:44 -04
 ]]
 
-webview = Webkit.WebView.new()
+function moonbrowser_init()
+    webview:load_uri('http://google.com')
+    ui.entry_url.text = 'google.com'
+    ui.main_window.title = 'Google'
+end
+moonbrowser_init()
 
 function ui.menu_about:on_button_press_event()
     ui.about_window:run()
@@ -20,8 +25,6 @@ end
 function ui.main_window:on_destroy()
     Gtk.main_quit()
 end
-
-ui.entry_url:grab_focus()
 
 function ui.entry_url:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
@@ -43,6 +46,5 @@ function ui.btn_reload:on_clicked()
 end
 
 function ui.btn_home:on_clicked()
-    webview:load_uri('http://google.com')
-    ui.entry_url.text = 'google.com'
+    moonbrowser_init()
 end
