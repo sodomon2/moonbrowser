@@ -18,7 +18,6 @@ GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1,function()
     return true
 end)
 
-
 function ui.menu_about:on_button_press_event()
     ui.about_window:run()
     ui.about_window:hide()
