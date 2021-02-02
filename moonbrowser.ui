@@ -4,10 +4,11 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkAboutDialog" id="about_window">
     <property name="can_focus">False</property>
+    <property name="icon_name">applications-internet</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">MoonBrowser</property>
     <property name="version">1.0</property>
-    <property name="copyright" translatable="yes">Copyright (c) 2020 Díaz Urbaneja Víctor Diego Alejandro(Sodomon) 
+    <property name="copyright" translatable="yes">Copyright (c) 2020-2021 Díaz Urbaneja Víctor Diego Alejandro(Sodomon) 
 
   </property>
     <property name="comments" translatable="yes">a simple lua browser using lgi and webkit2
@@ -46,6 +47,7 @@
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">MoonBrowser</property>
     <property name="window_position">center</property>
+    <property name="icon_name">applications-internet</property>
     <child type="titlebar">
       <placeholder/>
     </child>
