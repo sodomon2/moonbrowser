@@ -7,21 +7,16 @@
  @date      10.08.2020 17:01:07 -04
 --]]
 
-lgi       = require 'lgi'             -- La libreria que me permitira usar GTK
-GObject   = lgi.GObject               -- Parte de lgi
-GLib      = lgi.GLib                  -- para el treeview
-Gdk       = lgi.Gdk                   -- para las keybindings
-Gtk       = lgi.require('Gtk', '3.0') -- El objeto GTK
-Webkit    = lgi.require('WebKit2')
-webview   = Webkit.WebView.new()
+lgi		  = require("lgi")
+Gtk		  = lgi.require('Gtk', '3.0')
+Gdk		  = lgi.require('Gdk', '3.0')
+GLib	  = lgi.require('GLib', '2.0')
+Webkit    = lgi.require('WebKit2','4.0')
 
-assert    = lgi.assert
-builder   = Gtk.Builder()
+app       = Gtk.Application()
+webview   = Webkit.WebView()
 
-assert(builder:add_from_file('moonbrowser.ui'))
-ui = builder.objects
-
+-- MoonBrowser
 require('src.moonbrowser-app')
 
-ui.main_window:show_all(ui.scroll:add(webview))
-Gtk.main()
+app:run()
