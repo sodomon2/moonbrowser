@@ -7,50 +7,52 @@
 ]]
 
 content = Gtk.Box {
-    orientation = 'HORIZONTAL',
-    expand = false,
-    Gtk.Button {
-        id = 'btn_back',
-        relief = Gtk.ReliefStyle.NONE,
-        Gtk.Image { icon_name = 'back-symbolic' },
-        on_clicked = function() webview:go_back() end
+    orientation = 'VERTICAL',
+    Gtk.Box {
+        expand = false,
+        orientation = 'HORIZONTAL',
+        Gtk.Button {
+            id = 'btn_back',
+            relief = Gtk.ReliefStyle.NONE,
+            Gtk.Image { icon_name = 'back-symbolic' },
+            on_clicked = function() webview:go_back() end
+        },
+        Gtk.Button {
+            id = 'btn_forward',
+            relief = Gtk.ReliefStyle.NONE,
+            Gtk.Image { icon_name = 'next-symbolic' },
+            on_clicked = function() webview:go_forward() end
+        },
+        Gtk.Button {
+            id = 'btn_reload',
+            relief = Gtk.ReliefStyle.NONE,
+            Gtk.Image { icon_name = 'reload-symbolic' },
+            on_clicked = function() webview:reload() end
+        },
+        Gtk.Separator(),
+        Gtk.Entry { id = 'entry_url', expand = true },
+        Gtk.Separator(),
+        Gtk.Button {
+            id = 'btn_home',
+            relief = Gtk.ReliefStyle.NONE,
+            Gtk.Image { icon_name = 'gtk-home-symbolic' },
+            on_clicked = function()
+                webview:load_uri('http://duckduckgo.com')
+                content.child.entry_url.text = 'duckduckgo.com'
+            end
+        }
     },
-	Gtk.Button {
-        id = 'btn_forward',
-        relief = Gtk.ReliefStyle.NONE,
-        Gtk.Image { icon_name = 'next-symbolic' },
-        on_clicked = function() webview:go_forward() end
-	},
-    Gtk.Button {
-        id = 'btn_reload',
-        relief = Gtk.ReliefStyle.NONE,
-        Gtk.Image { icon_name = 'reload-symbolic' },
-        on_clicked = function() webview:reload() end
-	},
-    Gtk.Separator(),
-    Gtk.Entry { id = 'entry_url', expand = true },
-    Gtk.Separator(),
-    Gtk.Button {
-        id = 'btn_home',
-        relief = Gtk.ReliefStyle.NONE,
-        Gtk.Image { icon_name = 'gtk-home-symbolic' },
-        on_clicked = function()
-            webview:load_uri('http://duckduckgo.com')
-            content.child.entry_url.text = 'duckduckgo.com'
-        end
-	},
+    Gtk.Box {
+        orientation = 'VERTICAL',
+        Gtk.ScrolledWindow { id = 'scroll', expand = true }
+   },
 }
 
 main_window	= Gtk.Window {
 	width_request	= 800,
 	height_request	= 600,
-    Gtk.Box {
-        orientation = 'VERTICAL',
-        content,
-        Gtk.ScrolledWindow { id = 'scroll', expand = true }
-    }
+    content
 }
-
 
 function moonbrowser_init()
     webview:load_uri('http://duckduckgo.com')
