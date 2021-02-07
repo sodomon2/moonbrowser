@@ -1,9 +1,9 @@
 --[[--
  @package   MoonBrowser
  @filename  moonbrowser-app.lua
- @version   1.0
+ @version   2.0
  @autor     Diaz Urbaneja Victor Diego Alejandro <sodomon2@gmail.com>
- @date      23.12.2020 22:09:44 -04
+ @date      06.02.2021 08:50:42 -04
 ]]
 
 content = Gtk.Box {
@@ -36,7 +36,7 @@ content = Gtk.Box {
         Gtk.Image { icon_name = 'gtk-home-symbolic' },
         on_clicked = function()
             webview:load_uri('http://duckduckgo.com')
-            ui.entry_url.text = 'duckduckgo.com'
+            content.child.entry_url.text = 'duckduckgo.com'
         end
 	},
 }

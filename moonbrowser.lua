@@ -1,10 +1,10 @@
 #!/usr/bin/env lua
 --[[--
  @package   MoonBrowser
- @filename  moonbrowser.lua  
- @version   1.0
- @author    Diaz Urbaneja Victor Diego Alejandro <sodomon2@gmail.com> 
- @date      10.08.2020 17:01:07 -04
+ @filename  moonbrowser.lua
+ @version   2.0
+ @author    Diaz Urbaneja Victor Diego Alejandro <sodomon2@gmail.com>
+ @date      06.02.2021 08:50:42 -04
 --]]
 
 lgi		  = require("lgi")
