@@ -4,7 +4,7 @@ MoonBrowser is a simple web browser in lua
 
 ## Screenshot
 
-![screenshot](https://i.imgur.com/P6yGGvS.png)
+![screenshot](https://github.com/sodomon2/project-screenshot/blob/master/moonbrowser/screenshot.png?raw=true)
 
 ## Dependencies
 
