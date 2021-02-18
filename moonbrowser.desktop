@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=moonbrowser
+Type=Application
+Comment=MoonBrowser is a simple web browser in lua
+Icon=web-browser
+Exec=moonbrowser
+Terminal=false
+Categories=Network;WebBrowser;
