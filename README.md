@@ -9,7 +9,7 @@ MoonBrowser is a simple web browser in lua
 Note: in order to install `moonbrowser` you need to have [luastatic](https://github.com/ers35/luastatic) installed
 
 ```
-git clone https://github.com/moonsteal/moonbrowser.git
+git clone https://github.com/sodomon2/moonbrowser.git
 make moonbrowser
 [sudo] make install
 ```
