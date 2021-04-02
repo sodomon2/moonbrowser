@@ -12,19 +12,16 @@ content = Gtk.Box {
         expand = false,
         orientation = 'HORIZONTAL',
         Gtk.Button {
-            id = 'btn_back',
             relief = Gtk.ReliefStyle.NONE,
             Gtk.Image { icon_name = 'back-symbolic' },
             on_clicked = function() webview:go_back() end
         },
         Gtk.Button {
-            id = 'btn_forward',
             relief = Gtk.ReliefStyle.NONE,
             Gtk.Image { icon_name = 'next-symbolic' },
             on_clicked = function() webview:go_forward() end
         },
         Gtk.Button {
-            id = 'btn_reload',
             relief = Gtk.ReliefStyle.NONE,
             Gtk.Image { icon_name = 'reload-symbolic' },
             on_clicked = function() webview:reload() end
@@ -33,7 +30,6 @@ content = Gtk.Box {
         Gtk.Entry { id = 'entry_url', expand = true },
         Gtk.Separator(),
         Gtk.Button {
-            id = 'btn_home',
             relief = Gtk.ReliefStyle.NONE,
             Gtk.Image { icon_name = 'gtk-home-symbolic' },
             on_clicked = function()
