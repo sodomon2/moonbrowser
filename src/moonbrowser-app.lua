@@ -52,8 +52,7 @@ main_window	= Gtk.Window {
 
 function moonbrowser_init()
     webview:load_uri('http://duckduckgo.com')
-    main_window.child.entry_url.text = 'duckduckgo.com'
-    main_window.title = webview:get_title()
+    main_window.child.entry_url.text = 'http://duckduckgo.com'
 end
 
 GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1,function()
@@ -66,9 +65,9 @@ function main_window:on_destroy()
 end
 
 function main_window.child.entry_url:on_key_release_event(event)
-    if ( event.keyval  == Gdk.KEY_Return ) then
-      webview:load_uri('http://' .. main_window.child.entry_url.text)
-    end
+	if ( event.keyval  == Gdk.KEY_Return ) then
+		webview:load_uri('http://' and 'https://' .. main_window.child.entry_url.text)
+	end
 end
 
 function app:on_activate()
