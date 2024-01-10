@@ -55,17 +55,21 @@ function moonbrowser_init()
     main_window.child.entry_url.text = 'http://duckduckgo.com'
 end
 
-GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1,function()
-    main_window.title = webview:get_title()
-    return true
-end)
+function webview:on_load_changed(event)
+	print(event)
+	if event == 'STARTED' then
+		main_window.title = 'Loading Page'
+	elseif event == 'FINISHED' then
+		main_window.title = webview:get_title()
+	end
+end
 
 function main_window:on_destroy()
     Gtk.main_quit()
 end
 
 function main_window.child.entry_url:on_key_release_event(event)
-	if ( event.keyval  == Gdk.KEY_Return ) then
+	if ( event.keyval == Gdk.KEY_Return ) then
 		webview:load_uri('http://' and 'https://' .. main_window.child.entry_url.text)
 	end
 end
